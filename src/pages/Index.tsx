@@ -19,7 +19,7 @@ const Index = () => {
         <div className="w-full max-w-md space-y-8">
           {/* Header */}
           <div className="text-center">
-            <h1 className="text-5xl font-bold text-[#276100]">NOW</h1>
+            <h1 className="text-5xl font-semibold text-[#276100]">NOW</h1>
           </div>
 
           {/* Form */}
