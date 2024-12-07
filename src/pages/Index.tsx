@@ -17,29 +17,9 @@ const Index = () => {
       {/* Right side - Login Form */}
       <div className="w-full lg:w-1/2 flex items-center justify-center px-6 py-12 lg:px-8">
         <div className="w-full max-w-md space-y-8">
-          {/* Logo */}
-          <div className="flex flex-col items-center">
-            <div className="w-12 h-12">
-              <img 
-                src="/lovable-uploads/5a57c9da-c53d-401c-9597-c0463050377a.png"
-                alt="NOW Logo"
-                className="w-full h-full"
-              />
-            </div>
-            <div className="mt-2 text-[#276100] font-medium">NOW</div>
-          </div>
-
-          {/* Welcome Text */}
+          {/* Header */}
           <div className="text-center">
-            <h2 className="text-3xl font-semibold text-gray-900">Welcome Onboard</h2>
-            <p className="mt-2 text-sm text-gray-600">
-              Log In to your venue account.
-              <br />
-              Don't have an account?{" "}
-              <Link to="/register" className="text-[#276100] hover:underline">
-                Register
-              </Link>
-            </p>
+            <h1 className="text-5xl font-bold text-[#276100]">NOW</h1>
           </div>
 
           {/* Form */}
