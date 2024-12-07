@@ -1,8 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Index = () => {
+  const navigate = useNavigate();
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // In a real app, you would validate credentials here
+    // For now, we'll just redirect to account setup
+    navigate("/account-setup");
+  };
+
   return (
     <div className="min-h-screen flex">
       {/* Left side - Image */}
@@ -23,7 +32,7 @@ const Index = () => {
           </div>
 
           {/* Form */}
-          <form className="mt-8 space-y-6">
+          <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
             <div className="space-y-4">
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700">
