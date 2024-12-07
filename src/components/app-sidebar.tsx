@@ -31,23 +31,28 @@ export function AppSidebar() {
   return (
     <Sidebar variant="inset">
       <SidebarContent>
+        <div className="w-full text-center py-4 font-bold text-[#276100] text-xl">
+          NOW
+        </div>
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton
-                    tooltip={item.title}
-                    className="text-[#276100]"
-                    asChild
-                  >
-                    <a href={item.url}>
-                      <item.icon className="h-5 w-5" />
-                      <span>{item.title}</span>
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
+              <div className="flex flex-col items-center space-y-6">
+                {items.map((item) => (
+                  <SidebarMenuItem key={item.title}>
+                    <SidebarMenuButton
+                      tooltip={item.title}
+                      className="text-[#276100]"
+                      asChild
+                    >
+                      <a href={item.url}>
+                        <item.icon className="h-5 w-5" />
+                        <span>{item.title}</span>
+                      </a>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                ))}
+              </div>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
