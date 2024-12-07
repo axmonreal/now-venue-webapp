@@ -4,20 +4,28 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 
-export default function ForgotPassword() {
-  const [email, setEmail] = useState("");
+export default function ChangePassword() {
+  const [passwords, setPasswords] = useState({
+    current: "",
+    new: "",
+    confirm: ""
+  });
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (passwords.new !== passwords.confirm) {
+      toast.error("New passwords do not match");
+      return;
+    }
     setIsLoading(true);
     
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000));
     
-    toast.success("If an account exists with that email, you will receive password reset instructions.");
+    toast.success("Password successfully changed");
     setIsLoading(false);
-    setEmail("");
+    setPasswords({ current: "", new: "", confirm: "" });
   };
 
   return (
@@ -32,26 +40,53 @@ export default function ForgotPassword() {
         <div className="max-w-md w-full space-y-8">
           <div className="text-center">
             <h2 className="mt-6 text-3xl font-bold text-gray-900">
-              Forgot Password
+              Change Password
             </h2>
             <p className="mt-2 text-sm text-gray-600">
-              Enter your email address and we'll send you instructions to reset your password.
+              Enter your current password and choose a new one
             </p>
           </div>
 
           <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
             <div className="space-y-4">
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                  Email address
+                <label htmlFor="currentPassword" className="block text-sm font-medium text-gray-700">
+                  Current Password
                 </label>
                 <Input
-                  id="email"
-                  type="email"
+                  id="currentPassword"
+                  type="password"
                   required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
+                  value={passwords.current}
+                  onChange={(e) => setPasswords(prev => ({ ...prev, current: e.target.value }))}
+                  className="mt-1"
+                />
+              </div>
+              
+              <div>
+                <label htmlFor="newPassword" className="block text-sm font-medium text-gray-700">
+                  New Password
+                </label>
+                <Input
+                  id="newPassword"
+                  type="password"
+                  required
+                  value={passwords.new}
+                  onChange={(e) => setPasswords(prev => ({ ...prev, new: e.target.value }))}
+                  className="mt-1"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">
+                  Confirm New Password
+                </label>
+                <Input
+                  id="confirmPassword"
+                  type="password"
+                  required
+                  value={passwords.confirm}
+                  onChange={(e) => setPasswords(prev => ({ ...prev, confirm: e.target.value }))}
                   className="mt-1"
                 />
               </div>
@@ -63,7 +98,7 @@ export default function ForgotPassword() {
                 className="w-full bg-[#276100] hover:bg-[#276100]/90"
                 disabled={isLoading}
               >
-                {isLoading ? "Sending..." : "Send Reset Instructions"}
+                {isLoading ? "Changing..." : "Change Password"}
               </Button>
             </div>
 
