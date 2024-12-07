@@ -19,9 +19,9 @@ const Dashboard = () => {
               <h2 className="text-2xl font-semibold">Select Pass Type</h2>
               
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                <Card className="border-2 border-[#276100]">
+                <Card>
                   <CardHeader>
-                    <CardTitle className="text-xl text-[#276100]">Cover Pass</CardTitle>
+                    <CardTitle className="text-xl">Cover Pass</CardTitle>
                     <p className="text-gray-600 text-sm">
                       Allow customers to pay cover with their phones
                     </p>
