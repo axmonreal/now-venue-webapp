@@ -34,7 +34,7 @@ export function AppSidebar() {
         <div className="w-full text-center py-4 font-bold text-[#276100] text-xl">
           NOW
         </div>
-        <SidebarGroup>
+        <SidebarGroup className="h-[calc(100vh-4rem)] flex items-center justify-center">
           <SidebarGroupContent>
             <SidebarMenu>
               <div className="flex flex-col items-center space-y-6">
