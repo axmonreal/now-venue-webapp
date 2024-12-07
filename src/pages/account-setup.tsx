@@ -266,7 +266,7 @@ const AccountSetup = () => {
                   index === 3 ? "rounded-r-full" : ""
                 } ${
                   ["personal", "bar", "hours", "banking"].indexOf(currentStep) >= index
-                    ? "bg-primary"
+                    ? "bg-[#276100]"
                     : "bg-muted"
                 }`}
               />
