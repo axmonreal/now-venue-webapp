@@ -10,8 +10,8 @@ const Dashboard = () => {
       <div className="flex min-h-screen w-full">
         <AppSidebar />
         <div className="min-h-screen flex-1 bg-background p-[2%]">
-          <div className="container mx-auto space-y-[2vh] flex flex-col justify-center min-h-[90vh]">
-            <header className="mb-[2vh]">
+          <div className="container mx-auto">
+            <header className="mb-[4vh]">
               <h1 className="text-3xl font-semibold">New Listing Creation</h1>
             </header>
 
