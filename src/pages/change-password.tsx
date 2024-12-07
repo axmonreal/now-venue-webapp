@@ -20,7 +20,6 @@ export default function ChangePassword() {
     }
     setIsLoading(true);
     
-    // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     toast.success("Password successfully changed");
@@ -36,19 +35,19 @@ export default function ChangePassword() {
       </div>
 
       {/* Right side with form */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center p-8">
-        <div className="max-w-md w-full space-y-8">
+      <div className="w-full lg:w-1/2 flex items-center justify-center p-[5%]">
+        <div className="max-w-md w-full space-y-[2vh]">
           <div className="text-center">
-            <h2 className="mt-6 text-3xl font-bold text-gray-900">
+            <h2 className="mt-[1.5vh] text-3xl font-bold text-gray-900">
               Change Password
             </h2>
-            <p className="mt-2 text-sm text-gray-600">
+            <p className="mt-[1vh] text-sm text-gray-600">
               Enter your current password and choose a new one
             </p>
           </div>
 
-          <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-            <div className="space-y-4">
+          <form className="mt-[2vh] space-y-[1.5vh]" onSubmit={handleSubmit}>
+            <div className="space-y-[1vh]">
               <div>
                 <label htmlFor="currentPassword" className="block text-sm font-medium text-gray-700">
                   Current Password
@@ -59,7 +58,7 @@ export default function ChangePassword() {
                   required
                   value={passwords.current}
                   onChange={(e) => setPasswords(prev => ({ ...prev, current: e.target.value }))}
-                  className="mt-1"
+                  className="mt-[0.5vh]"
                 />
               </div>
               
@@ -73,7 +72,7 @@ export default function ChangePassword() {
                   required
                   value={passwords.new}
                   onChange={(e) => setPasswords(prev => ({ ...prev, new: e.target.value }))}
-                  className="mt-1"
+                  className="mt-[0.5vh]"
                 />
               </div>
 
@@ -87,7 +86,7 @@ export default function ChangePassword() {
                   required
                   value={passwords.confirm}
                   onChange={(e) => setPasswords(prev => ({ ...prev, confirm: e.target.value }))}
-                  className="mt-1"
+                  className="mt-[0.5vh]"
                 />
               </div>
             </div>

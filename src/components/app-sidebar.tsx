@@ -31,13 +31,13 @@ export function AppSidebar() {
   return (
     <Sidebar variant="inset">
       <SidebarContent>
-        <div className="w-full text-center py-4 font-bold text-[#276100] text-xl">
+        <div className="w-full text-center py-[1vh] font-bold text-[#276100] text-xl">
           NOW
         </div>
-        <SidebarGroup className="h-[calc(100vh-4rem)] flex items-center justify-center">
+        <SidebarGroup className="h-[calc(100vh-4vh)] flex items-center justify-center">
           <SidebarGroupContent>
             <SidebarMenu>
-              <div className="flex flex-col items-center space-y-12">
+              <div className="flex flex-col items-center space-y-[3vh]">
                 {items.map((item) => (
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton
@@ -46,7 +46,7 @@ export function AppSidebar() {
                       asChild
                     >
                       <a href={item.url}>
-                        <item.icon className="h-5 w-5" />
+                        <item.icon className="h-[2vh] w-[2vh]" />
                         <span>{item.title}</span>
                       </a>
                     </SidebarMenuButton>
