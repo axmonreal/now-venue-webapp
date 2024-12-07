@@ -27,7 +27,7 @@ const Dashboard = () => {
                     </p>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <button className="w-full p-4 bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100">
+                    <button className="w-full p-4 bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-[#276100] transition-all">
                       <div className="text-left">
                         <p className="font-medium">Continuous</p>
                         <p className="text-sm text-gray-600">Offer this pass everyday</p>
@@ -35,7 +35,7 @@ const Dashboard = () => {
                       <ChevronRight className="text-gray-400 flex-shrink-0" />
                     </button>
                     
-                    <button className="w-full p-4 bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100">
+                    <button className="w-full p-4 bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-[#276100] transition-all">
                       <div className="text-left">
                         <p className="font-medium">Day of Week</p>
                         <p className="text-sm text-gray-600">Offer this pass on a specific day(s) of the week</p>
@@ -43,7 +43,7 @@ const Dashboard = () => {
                       <ChevronRight className="text-gray-400 flex-shrink-0" />
                     </button>
                     
-                    <button className="w-full p-4 bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100">
+                    <button className="w-full p-4 bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-[#276100] transition-all">
                       <div className="text-left">
                         <p className="font-medium">Custom</p>
                         <p className="text-sm text-gray-600">Offer this pass on select dates</p>
@@ -61,7 +61,7 @@ const Dashboard = () => {
                     </p>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <button className="w-full p-4 bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100">
+                    <button className="w-full p-4 bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-[#276100] transition-all">
                       <div className="text-left">
                         <p className="font-medium">Continuous</p>
                         <p className="text-sm text-gray-600">Offer this pass everyday</p>
@@ -69,7 +69,7 @@ const Dashboard = () => {
                       <ChevronRight className="text-gray-400 flex-shrink-0" />
                     </button>
                     
-                    <button className="w-full p-4 bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100">
+                    <button className="w-full p-4 bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-[#276100] transition-all">
                       <div className="text-left">
                         <p className="font-medium">Day of Week</p>
                         <p className="text-sm text-gray-600">Offer this pass on a specific day(s) of the week</p>
@@ -77,7 +77,7 @@ const Dashboard = () => {
                       <ChevronRight className="text-gray-400 flex-shrink-0" />
                     </button>
                     
-                    <button className="w-full p-4 bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100">
+                    <button className="w-full p-4 bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-[#276100] transition-all">
                       <div className="text-left">
                         <p className="font-medium">Custom</p>
                         <p className="text-sm text-gray-600">Offer this pass on select dates</p>
@@ -95,7 +95,7 @@ const Dashboard = () => {
                     </p>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <button className="w-full p-4 bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100">
+                    <button className="w-full p-4 bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-[#276100] transition-all">
                       <div className="text-left">
                         <p className="font-medium">Continuous</p>
                         <p className="text-sm text-gray-600">Offer this pass everyday</p>
@@ -103,7 +103,7 @@ const Dashboard = () => {
                       <ChevronRight className="text-gray-400 flex-shrink-0" />
                     </button>
                     
-                    <button className="w-full p-4 bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100">
+                    <button className="w-full p-4 bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-[#276100] transition-all">
                       <div className="text-left">
                         <p className="font-medium">Day of Week</p>
                         <p className="text-sm text-gray-600">Offer this pass on a specific day(s) of the week</p>
@@ -111,7 +111,7 @@ const Dashboard = () => {
                       <ChevronRight className="text-gray-400 flex-shrink-0" />
                     </button>
                     
-                    <button className="w-full p-4 bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100">
+                    <button className="w-full p-4 bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-[#276100] transition-all">
                       <div className="text-left">
                         <p className="font-medium">Custom</p>
                         <p className="text-sm text-gray-600">Offer this pass on select dates</p>
