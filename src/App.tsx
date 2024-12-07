@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import ForgotPassword from "./pages/forgot-password";
 import ChangePassword from "./pages/change-password";
 import AccountSetup from "./pages/account-setup";
+import Dashboard from "./pages/dashboard";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/change-password" element={<ChangePassword />} />
           <Route path="/account-setup" element={<AccountSetup />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
