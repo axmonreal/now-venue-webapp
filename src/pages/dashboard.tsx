@@ -10,7 +10,7 @@ const Dashboard = () => {
       <div className="flex min-h-screen w-full">
         <AppSidebar />
         <div className="min-h-screen flex-1 bg-background p-[2%]">
-          <div className="container mx-auto space-y-[2vh]">
+          <div className="container mx-auto space-y-[2vh] flex flex-col justify-center min-h-[90vh]">
             <header className="mb-[2vh]">
               <h1 className="text-3xl font-semibold">New Listing Creation</h1>
             </header>
@@ -27,7 +27,7 @@ const Dashboard = () => {
                     </p>
                   </CardHeader>
                   <CardContent className="space-y-[1vh]">
-                    <button className="w-full p-[2%] bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-green-600 transition-all">
+                    <button className="w-full p-[2%] bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-green-600">
                       <div className="text-left">
                         <p className="font-medium">Continuous</p>
                         <p className="text-sm text-gray-600">Offer this pass everyday</p>
@@ -35,7 +35,7 @@ const Dashboard = () => {
                       <ChevronRight className="text-gray-400 flex-shrink-0" />
                     </button>
                     
-                    <button className="w-full p-[2%] bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-green-600 transition-all">
+                    <button className="w-full p-[2%] bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-green-600">
                       <div className="text-left">
                         <p className="font-medium">Day of Week</p>
                         <p className="text-sm text-gray-600">Offer this pass on a specific day(s) of the week</p>
@@ -43,7 +43,7 @@ const Dashboard = () => {
                       <ChevronRight className="text-gray-400 flex-shrink-0" />
                     </button>
                     
-                    <button className="w-full p-[2%] bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-green-600 transition-all">
+                    <button className="w-full p-[2%] bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-green-600">
                       <div className="text-left">
                         <p className="font-medium">Custom</p>
                         <p className="text-sm text-gray-600">Offer this pass on select dates</p>
@@ -61,7 +61,7 @@ const Dashboard = () => {
                     </p>
                   </CardHeader>
                   <CardContent className="space-y-[1vh]">
-                    <button className="w-full p-[2%] bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-green-600 transition-all">
+                    <button className="w-full p-[2%] bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-green-600">
                       <div className="text-left">
                         <p className="font-medium">Continuous</p>
                         <p className="text-sm text-gray-600">Offer this pass everyday</p>
@@ -69,7 +69,7 @@ const Dashboard = () => {
                       <ChevronRight className="text-gray-400 flex-shrink-0" />
                     </button>
                     
-                    <button className="w-full p-[2%] bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-green-600 transition-all">
+                    <button className="w-full p-[2%] bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-green-600">
                       <div className="text-left">
                         <p className="font-medium">Day of Week</p>
                         <p className="text-sm text-gray-600">Offer this pass on a specific day(s) of the week</p>
@@ -77,7 +77,7 @@ const Dashboard = () => {
                       <ChevronRight className="text-gray-400 flex-shrink-0" />
                     </button>
                     
-                    <button className="w-full p-[2%] bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-green-600 transition-all">
+                    <button className="w-full p-[2%] bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-green-600">
                       <div className="text-left">
                         <p className="font-medium">Custom</p>
                         <p className="text-sm text-gray-600">Offer this pass on select dates</p>
@@ -95,7 +95,7 @@ const Dashboard = () => {
                     </p>
                   </CardHeader>
                   <CardContent className="space-y-[1vh]">
-                    <button className="w-full p-[2%] bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-green-600 transition-all">
+                    <button className="w-full p-[2%] bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-green-600">
                       <div className="text-left">
                         <p className="font-medium">Continuous</p>
                         <p className="text-sm text-gray-600">Offer this pass everyday</p>
@@ -103,7 +103,7 @@ const Dashboard = () => {
                       <ChevronRight className="text-gray-400 flex-shrink-0" />
                     </button>
                     
-                    <button className="w-full p-[2%] bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-green-600 transition-all">
+                    <button className="w-full p-[2%] bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-green-600">
                       <div className="text-left">
                         <p className="font-medium">Day of Week</p>
                         <p className="text-sm text-gray-600">Offer this pass on a specific day(s) of the week</p>
@@ -111,7 +111,7 @@ const Dashboard = () => {
                       <ChevronRight className="text-gray-400 flex-shrink-0" />
                     </button>
                     
-                    <button className="w-full p-[2%] bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-green-600 transition-all">
+                    <button className="w-full p-[2%] bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-green-600">
                       <div className="text-left">
                         <p className="font-medium">Custom</p>
                         <p className="text-sm text-gray-600">Offer this pass on select dates</p>

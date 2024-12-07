@@ -37,7 +37,7 @@ export function AppSidebar() {
         <SidebarGroup className="h-[calc(100vh-4vh)] flex items-center justify-center">
           <SidebarGroupContent>
             <SidebarMenu>
-              <div className="flex flex-col items-center space-y-[3vh]">
+              <div className="flex flex-col items-center space-y-[9vh]">
                 {items.map((item) => (
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton
