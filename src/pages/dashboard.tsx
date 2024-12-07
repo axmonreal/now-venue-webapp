@@ -23,7 +23,7 @@ const Dashboard = () => {
                   <CardHeader>
                     <CardTitle className="text-xl">Cover Pass</CardTitle>
                     <p className="text-gray-600 text-sm">
-                      Allow customers to pay cover with their phones
+                      Allow patrons to pay cover with their phones
                     </p>
                   </CardHeader>
                   <CardContent className="space-y-[1vh]">
@@ -57,7 +57,7 @@ const Dashboard = () => {
                   <CardHeader>
                     <CardTitle className="text-xl">Line Skip Pass</CardTitle>
                     <p className="text-gray-600 text-sm">
-                      Allow customers to bypass the line outside of your bar
+                      Allow patrons to skip the line outside of your bar
                     </p>
                   </CardHeader>
                   <CardContent className="space-y-[1vh]">
