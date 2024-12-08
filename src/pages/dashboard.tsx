@@ -41,7 +41,10 @@ const Dashboard = () => {
                       <ChevronRight className="text-gray-400 flex-shrink-0" />
                     </button>
                     
-                    <button className="w-full p-[2%] bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-green-600">
+                    <button 
+                      onClick={() => navigate("/day-of-week-cover-pass")}
+                      className="w-full p-[2%] bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-green-600"
+                    >
                       <div className="text-left">
                         <p className="font-medium">Day of Week</p>
                         <p className="text-sm text-gray-600">Offer this pass on a specific day(s) of the week</p>

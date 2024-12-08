@@ -8,6 +8,7 @@ import Settings from "./pages/settings";
 import HomePage from "./pages/home";
 import AnalyticsPage from "./pages/analytics";
 import ContinuousCoverPass from "./pages/continuous-cover-pass";
+import DayOfWeekCoverPass from "./pages/day-of-week-cover-pass";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "sonner";
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/home" element={<HomePage />} />
         <Route path="/analytics" element={<AnalyticsPage />} />
         <Route path="/continuous-cover-pass" element={<ContinuousCoverPass />} />
+        <Route path="/day-of-week-cover-pass" element={<DayOfWeekCoverPass />} />
       </Routes>
       <Toaster />
       <SonnerToaster />
