@@ -12,6 +12,7 @@ const passesData = {
   "2024-04-15": { cover: 2, lineSkip: 1 },
   "2024-04-20": { cover: 1, lineSkip: 2 },
   "2024-04-25": { cover: 3, lineSkip: 0 },
+  "2024-12-20": { cover: 0, lineSkip: 2 }, // Added dummy line skip pass for December 20
 };
 
 const HomePage = () => {
@@ -22,7 +23,7 @@ const HomePage = () => {
     <SidebarProvider defaultOpen>
       <div className="flex min-h-screen w-full">
         <AppSidebar />
-        <div className="flex-1 space-y-8 p-8 pt-6">
+        <div className="flex-1 space-y-6 p-6 pt-4">
           <div className="flex items-center justify-end">
             <Button 
               onClick={() => navigate("/dashboard")}
@@ -41,7 +42,7 @@ const HomePage = () => {
                   mode="single"
                   selected={date}
                   onSelect={setDate}
-                  className="rounded-md border w-full h-[80vh]"
+                  className="rounded-md border w-full h-[72vh]"
                   classNames={{
                     months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
                     month: "space-y-4 w-full",
@@ -53,8 +54,8 @@ const HomePage = () => {
                     head_row: "flex w-full",
                     head_cell: "text-muted-foreground rounded-md w-full font-normal text-base",
                     row: "flex w-full mt-4",
-                    cell: "relative h-24 w-full p-0 text-center hover:bg-accent hover:text-accent-foreground focus-within:relative focus-within:z-20",
-                    day: "h-24 w-full p-0 font-normal aria-selected:opacity-100",
+                    cell: "relative h-20 w-full p-0 text-center hover:bg-accent hover:text-accent-foreground focus-within:relative focus-within:z-20",
+                    day: "h-20 w-full p-0 font-normal aria-selected:opacity-100",
                     day_selected: "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground",
                     day_today: "bg-accent text-accent-foreground",
                     day_outside: "text-muted-foreground opacity-50",
