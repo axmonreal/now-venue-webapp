@@ -11,7 +11,7 @@ const Dashboard = () => {
         <AppSidebar />
         <div className="min-h-screen flex-1 bg-background p-[2%]">
           <div className="container mx-auto">
-            <header className="mb-[4vh]">
+            <header className="mb-[8vh]">
               <h1 className="text-3xl font-semibold">New Listing Creation</h1>
             </header>
 
