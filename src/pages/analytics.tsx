@@ -3,7 +3,6 @@ import { AppSidebar } from "@/components/app-sidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 
 const passData = [
   { name: 'Mon', cover: 4, lineSkip: 2, sales: 240 },
@@ -13,11 +12,6 @@ const passData = [
   { name: 'Fri', cover: 8, lineSkip: 4, sales: 480 },
   { name: 'Sat', cover: 9, lineSkip: 5, sales: 560 },
   { name: 'Sun', cover: 3, lineSkip: 2, sales: 200 },
-];
-
-const passTypeData = [
-  { name: 'Cover Passes', value: 35 },
-  { name: 'Line Skip Passes', value: 19 },
 ];
 
 const COLORS = ['#276100', '#7E69AB'];
@@ -65,39 +59,10 @@ const AnalyticsPage = () => {
               </CardHeader>
               <CardContent>
                 <div className="flex items-center justify-center h-[300px]">
-                  <div className="text-center">
-                    <span className="text-4xl font-bold">${totalSales.toLocaleString()}</span>
+                  <div className="text-center animate-[fade-in_0.6s_ease-out]">
+                    <span className="text-4xl font-bold animate-[scale-in_0.4s_ease-out]">${totalSales.toLocaleString()}</span>
                     <p className="text-sm text-muted-foreground mt-2">Total Sales</p>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>Pass Distribution</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="h-[300px]">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <PieChart>
-                      <Pie
-                        data={passTypeData}
-                        cx="50%"
-                        cy="50%"
-                        labelLine={false}
-                        label={({ name, percent }) => `${name} (${(percent * 100).toFixed(0)}%)`}
-                        outerRadius={100}
-                        fill="#8884d8"
-                        dataKey="value"
-                      >
-                        {passTypeData.map((entry, index) => (
-                          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                        ))}
-                      </Pie>
-                      <Tooltip />
-                    </PieChart>
-                  </ResponsiveContainer>
                 </div>
               </CardContent>
             </Card>
@@ -108,12 +73,12 @@ const AnalyticsPage = () => {
               </CardHeader>
               <CardContent>
                 <div className="flex items-center justify-center h-[300px] space-x-12">
-                  <div className="text-center">
-                    <span className="text-4xl font-bold" style={{ color: COLORS[0] }}>{totalCoverPasses}</span>
+                  <div className="text-center animate-[fade-in_0.6s_ease-out]">
+                    <span className="text-4xl font-bold animate-[scale-in_0.4s_ease-out]" style={{ color: COLORS[0] }}>{totalCoverPasses}</span>
                     <p className="text-sm text-muted-foreground mt-2">Cover Passes</p>
                   </div>
-                  <div className="text-center">
-                    <span className="text-4xl font-bold" style={{ color: COLORS[1] }}>{totalLineSkipPasses}</span>
+                  <div className="text-center animate-[fade-in_0.6s_ease-out]">
+                    <span className="text-4xl font-bold animate-[scale-in_0.4s_ease-out]" style={{ color: COLORS[1] }}>{totalLineSkipPasses}</span>
                     <p className="text-sm text-muted-foreground mt-2">Line Skip Passes</p>
                   </div>
                 </div>
