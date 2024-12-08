@@ -5,6 +5,7 @@ import { AppSidebar } from "@/components/app-sidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import { DayProps } from "react-day-picker";
 
 // Mock data for demonstration - in a real app, this would come from your backend
 const passesData = {
@@ -47,14 +48,14 @@ const HomePage = () => {
                     cell: "relative h-12 w-12 p-0",
                   }}
                   components={{
-                    Day: ({ date, ...props }) => {
+                    Day: ({ date, ...props }: DayProps) => {
                       const formattedDate = date.toISOString().split('T')[0];
                       const hasPass = passesData[formattedDate];
                       return (
                         <div className="relative w-full h-full">
                           <div
                             {...props}
-                            className={`${props.className} relative`}
+                            className={`${props.className || ''} relative`}
                           >
                             {date.getDate()}
                             {hasPass && (
