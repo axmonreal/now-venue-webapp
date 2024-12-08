@@ -3,7 +3,7 @@ import { AppSidebar } from "@/components/app-sidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 
 const passData = [
   { name: 'Mon', cover: 4, lineSkip: 2, sales: 240 },
@@ -20,7 +20,7 @@ const passTypeData = [
   { name: 'Line Skip Passes', value: 19 },
 ];
 
-const COLORS = ['#276100', '#9c2b2e'];
+const COLORS = ['#276100', '#7E69AB'];
 
 const timeSpans = [
   { label: 'Last 7 Days', value: '7d' },
@@ -31,6 +31,11 @@ const timeSpans = [
 
 const AnalyticsPage = () => {
   const [timeSpan, setTimeSpan] = useState('7d');
+
+  // Calculate totals
+  const totalSales = passData.reduce((sum, day) => sum + day.sales, 0);
+  const totalCoverPasses = passData.reduce((sum, day) => sum + day.cover, 0);
+  const totalLineSkipPasses = passData.reduce((sum, day) => sum + day.lineSkip, 0);
 
   return (
     <SidebarProvider defaultOpen>
@@ -59,16 +64,11 @@ const AnalyticsPage = () => {
                 <CardTitle>Pass Sales</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="h-[300px]">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart data={passData}>
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis dataKey="name" />
-                      <YAxis />
-                      <Tooltip />
-                      <Bar dataKey="sales" fill="#276100" name="Sales ($)" />
-                    </BarChart>
-                  </ResponsiveContainer>
+                <div className="flex items-center justify-center h-[300px]">
+                  <div className="text-center">
+                    <span className="text-4xl font-bold">${totalSales.toLocaleString()}</span>
+                    <p className="text-sm text-muted-foreground mt-2">Total Sales</p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -107,17 +107,15 @@ const AnalyticsPage = () => {
                 <CardTitle>Passes Sold by Type</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="h-[300px]">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart data={passData}>
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis dataKey="name" />
-                      <YAxis />
-                      <Tooltip />
-                      <Bar dataKey="cover" fill="#276100" name="Cover Passes" />
-                      <Bar dataKey="lineSkip" fill="#9c2b2e" name="Line Skip Passes" />
-                    </BarChart>
-                  </ResponsiveContainer>
+                <div className="flex items-center justify-center h-[300px] space-x-12">
+                  <div className="text-center">
+                    <span className="text-4xl font-bold" style={{ color: COLORS[0] }}>{totalCoverPasses}</span>
+                    <p className="text-sm text-muted-foreground mt-2">Cover Passes</p>
+                  </div>
+                  <div className="text-center">
+                    <span className="text-4xl font-bold" style={{ color: COLORS[1] }}>{totalLineSkipPasses}</span>
+                    <p className="text-sm text-muted-foreground mt-2">Line Skip Passes</p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
