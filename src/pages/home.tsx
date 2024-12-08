@@ -32,12 +32,18 @@ const HomePage = () => {
   const navigate = useNavigate();
 
   const handleDateSelect = (selectedDate: Date | undefined) => {
+    console.log("Selected date:", selectedDate);
     setDate(selectedDate);
   };
 
   const getSelectedDatePasses = () => {
     if (!date) return null;
+    
+    // Format the date as YYYY-MM-DD
     const formattedDate = date.toISOString().split('T')[0];
+    console.log("Formatted date:", formattedDate);
+    console.log("Available passes for date:", passesData[formattedDate]);
+    
     return passesData[formattedDate];
   };
 
