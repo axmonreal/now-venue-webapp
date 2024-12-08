@@ -3,8 +3,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ChevronRight } from "lucide-react";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+
   return (
     <SidebarProvider defaultOpen>
       <div className="flex min-h-screen w-full">
@@ -27,7 +30,10 @@ const Dashboard = () => {
                     </p>
                   </CardHeader>
                   <CardContent className="space-y-[1vh]">
-                    <button className="w-full p-[2%] bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-green-600">
+                    <button 
+                      onClick={() => navigate("/continuous-cover-pass")}
+                      className="w-full p-[2%] bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-green-600"
+                    >
                       <div className="text-left">
                         <p className="font-medium">Continuous</p>
                         <p className="text-sm text-gray-600">Offer this pass everyday</p>
