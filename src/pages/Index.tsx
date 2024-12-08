@@ -57,18 +57,10 @@ const Index = () => {
             LOG IN
           </Button>
 
-          <div className="text-center space-y-2">
-            <Link to="/forgot-password" className="text-sm text-[#276100] hover:underline block">
+          <div className="text-center">
+            <Link to="/forgot-password" className="text-sm text-[#276100] hover:underline">
               Forgot Password?
             </Link>
-            <Button
-              type="button"
-              variant="outline"
-              className="w-full border-[#276100] text-[#276100] hover:bg-[#276100] hover:text-white"
-              onClick={() => navigate("/dashboard")}
-            >
-              Create Pass
-            </Button>
           </div>
         </form>
       </div>

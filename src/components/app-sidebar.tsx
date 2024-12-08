@@ -12,7 +12,7 @@ import {
 const items = [
   {
     title: "Home",
-    url: "/dashboard",
+    url: "/home",
     icon: Home,
   },
   {
