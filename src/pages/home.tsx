@@ -31,6 +31,16 @@ const HomePage = () => {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
   const navigate = useNavigate();
 
+  const handleDateSelect = (selectedDate: Date | undefined) => {
+    setDate(selectedDate);
+  };
+
+  const getSelectedDatePasses = () => {
+    if (!date) return null;
+    const formattedDate = date.toISOString().split('T')[0];
+    return passesData[formattedDate];
+  };
+
   return (
     <SidebarProvider defaultOpen>
       <div className="flex min-h-screen w-full">
@@ -53,7 +63,7 @@ const HomePage = () => {
                 <Calendar
                   mode="single"
                   selected={date}
-                  onSelect={setDate}
+                  onSelect={handleDateSelect}
                   className="rounded-md border w-full h-[72vh]"
                   classNames={{
                     months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
@@ -110,31 +120,31 @@ const HomePage = () => {
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  {date && passesData[date.toISOString().split('T')[0]] ? (
+                  {date && getSelectedDatePasses() ? (
                     <>
-                      {passesData[date.toISOString().split('T')[0]].cover.quantity > 0 && (
+                      {getSelectedDatePasses()?.cover.quantity > 0 && (
                         <div className="flex flex-col p-4 bg-gray-50 rounded-lg">
                           <div className="flex items-center justify-between mb-2">
                             <p className="font-medium">Cover Pass</p>
                             <div className="h-2 w-2 bg-[#276100] rounded-full" />
                           </div>
                           <div className="space-y-1 text-sm text-gray-600">
-                            <p>Price: ${passesData[date.toISOString().split('T')[0]].cover.price}</p>
-                            <p>Total Quantity: {passesData[date.toISOString().split('T')[0]].cover.quantity}</p>
-                            <p>Remaining: {passesData[date.toISOString().split('T')[0]].cover.remaining}</p>
+                            <p>Price: ${getSelectedDatePasses()?.cover.price}</p>
+                            <p>Total Quantity: {getSelectedDatePasses()?.cover.quantity}</p>
+                            <p>Remaining: {getSelectedDatePasses()?.cover.remaining}</p>
                           </div>
                         </div>
                       )}
-                      {passesData[date.toISOString().split('T')[0]].lineSkip.quantity > 0 && (
+                      {getSelectedDatePasses()?.lineSkip.quantity > 0 && (
                         <div className="flex flex-col p-4 bg-gray-50 rounded-lg">
                           <div className="flex items-center justify-between mb-2">
                             <p className="font-medium">Line Skip Pass</p>
                             <div className="h-2 w-2 bg-[#FF6B6B] rounded-full" />
                           </div>
                           <div className="space-y-1 text-sm text-gray-600">
-                            <p>Price: ${passesData[date.toISOString().split('T')[0]].lineSkip.price}</p>
-                            <p>Total Quantity: {passesData[date.toISOString().split('T')[0]].lineSkip.quantity}</p>
-                            <p>Remaining: {passesData[date.toISOString().split('T')[0]].lineSkip.remaining}</p>
+                            <p>Price: ${getSelectedDatePasses()?.lineSkip.price}</p>
+                            <p>Total Quantity: {getSelectedDatePasses()?.lineSkip.quantity}</p>
+                            <p>Remaining: {getSelectedDatePasses()?.lineSkip.remaining}</p>
                           </div>
                         </div>
                       )}
