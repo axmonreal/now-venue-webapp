@@ -7,6 +7,7 @@ import AccountSetup from "./pages/account-setup";
 import Settings from "./pages/settings";
 import HomePage from "./pages/home";
 import AnalyticsPage from "./pages/analytics";
+import ContinuousCoverPass from "./pages/continuous-cover-pass";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "sonner";
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/settings" element={<Settings />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="/analytics" element={<AnalyticsPage />} />
+        <Route path="/continuous-cover-pass" element={<ContinuousCoverPass />} />
       </Routes>
       <Toaster />
       <SonnerToaster />
