@@ -7,7 +7,7 @@ const Index = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    navigate("/account-setup");
+    navigate("/home");
   };
 
   return (

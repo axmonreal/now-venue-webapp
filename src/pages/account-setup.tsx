@@ -73,7 +73,7 @@ const AccountSetup = () => {
         title: "Account setup complete!",
         description: "Your account has been successfully created.",
       });
-      navigate("/dashboard"); // You'll need to create this page
+      navigate("/home"); // Changed from /dashboard to /home
     }
   };
 

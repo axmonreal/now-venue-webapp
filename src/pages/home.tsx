@@ -25,7 +25,7 @@ const HomePage = () => {
             </Button>
           </div>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
-            <Card className="col-span-4">
+            <Card className="col-span-4 lg:col-span-5">
               <CardHeader>
                 <CardTitle>Pass Calendar</CardTitle>
               </CardHeader>
@@ -34,11 +34,11 @@ const HomePage = () => {
                   mode="single"
                   selected={date}
                   onSelect={setDate}
-                  className="rounded-md border"
+                  className="rounded-md border w-full h-[60vh]"
                 />
               </CardContent>
             </Card>
-            <Card className="col-span-3">
+            <Card className="col-span-3 lg:col-span-2">
               <CardHeader>
                 <CardTitle>Today's Passes</CardTitle>
               </CardHeader>
