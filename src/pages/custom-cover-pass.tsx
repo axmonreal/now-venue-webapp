@@ -30,10 +30,10 @@ const CustomCoverPass = () => {
         <AppSidebar />
         <div className="min-h-screen flex-1 bg-background p-8">
           <div className="container mx-auto max-w-5xl">
-            <header className="mb-8">
-              <h1 className="text-3xl font-semibold">Cover Pass Listing</h1>
-              <p className="text-muted-foreground">Custom - offer this pass on select dates</p>
-            </header>
+            <div className="mb-8 bg-[#F7FAF7] p-6 rounded-lg">
+              <h1 className="text-2xl font-semibold text-gray-800">Cover Pass Listing</h1>
+              <p className="text-green-700 mt-1">Custom - offer this pass on select dates</p>
+            </div>
 
             <form onSubmit={handleSubmit} className="space-y-8">
               <div className="grid gap-8 md:grid-cols-2">

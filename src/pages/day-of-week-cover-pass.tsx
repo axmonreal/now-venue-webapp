@@ -11,9 +11,9 @@ const DayOfWeekCoverPass = () => {
 
   return (
     <div className="container mx-auto p-6 max-w-6xl">
-      <div className="bg-[#F7F9F7] rounded-lg p-6 mb-8">
-        <h1 className="text-2xl font-semibold mb-2">Cover Pass Listing</h1>
-        <p className="text-green-700">Day of week - offer this pass on a specific day(s) of the week</p>
+      <div className="mb-8 bg-[#F7FAF7] p-6 rounded-lg">
+        <h1 className="text-2xl font-semibold text-gray-800">Cover Pass Listing</h1>
+        <p className="text-green-700 mt-1">Day of week - offer this pass on a specific day(s) of the week</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
