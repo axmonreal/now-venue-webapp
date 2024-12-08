@@ -41,11 +41,26 @@ const HomePage = () => {
                   mode="single"
                   selected={date}
                   onSelect={setDate}
-                  className="rounded-md border w-full h-[60vh]"
+                  className="rounded-md border w-full h-[80vh]"
                   classNames={{
-                    day: "h-12 w-12 text-lg font-medium p-0 aria-selected:opacity-100 hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+                    months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
+                    month: "space-y-4 w-full",
+                    caption: "flex justify-center pt-1 relative items-center mb-4",
+                    caption_label: "text-xl font-medium",
+                    nav: "space-x-1 flex items-center",
+                    nav_button: "h-10 w-10 bg-transparent p-0 opacity-50 hover:opacity-100",
+                    table: "w-full border-collapse",
+                    head_row: "flex w-full",
+                    head_cell: "text-muted-foreground rounded-md w-full font-normal text-base",
+                    row: "flex w-full mt-4",
+                    cell: "relative h-24 w-full p-0 text-center hover:bg-accent hover:text-accent-foreground focus-within:relative focus-within:z-20",
+                    day: "h-24 w-full p-0 font-normal aria-selected:opacity-100",
                     day_selected: "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground",
-                    cell: "relative h-12 w-12 p-0",
+                    day_today: "bg-accent text-accent-foreground",
+                    day_outside: "text-muted-foreground opacity-50",
+                    day_disabled: "text-muted-foreground opacity-50",
+                    day_range_middle: "aria-selected:bg-accent aria-selected:text-accent-foreground",
+                    day_hidden: "invisible",
                   }}
                   components={{
                     Day: ({ date, ...props }: DayProps & { className?: string }) => {
@@ -55,16 +70,16 @@ const HomePage = () => {
                         <div className="relative w-full h-full">
                           <div
                             {...props}
-                            className={`${props.className || ''} relative flex items-center justify-center w-full h-full`}
+                            className={`${props.className || ''} relative flex flex-col items-center justify-start pt-2 w-full h-full`}
                           >
-                            {date.getDate()}
+                            <span className="text-lg font-medium">{date.getDate()}</span>
                             {passes && (
-                              <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 flex gap-1">
+                              <div className="mt-2 flex flex-col items-center gap-1">
                                 {passes.cover > 0 && (
-                                  <div className="h-1.5 w-1.5 bg-[#276100] rounded-full" />
+                                  <div className="text-xs text-[#276100]">Cover ({passes.cover})</div>
                                 )}
                                 {passes.lineSkip > 0 && (
-                                  <div className="h-1.5 w-1.5 bg-[#FF6B6B] rounded-full" />
+                                  <div className="text-xs text-[#FF6B6B]">Skip ({passes.lineSkip})</div>
                                 )}
                               </div>
                             )}
