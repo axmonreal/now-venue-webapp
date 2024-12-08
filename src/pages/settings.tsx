@@ -6,6 +6,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel } from "@/components/
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useNavigate } from "react-router-dom";
 
 const formSchema = z.object({
   // Personal Info
@@ -27,6 +28,7 @@ type FormValues = z.infer<typeof formSchema>;
 
 export default function Settings() {
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -57,10 +59,24 @@ export default function Settings() {
     }
   };
 
+  const handleLogout = () => {
+    toast.success("Logged out successfully");
+    navigate("/");
+  };
+
   return (
     <div className="min-h-screen bg-background p-8">
       <div className="max-w-2xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8">Account Settings</h1>
+        <div className="flex justify-between items-center mb-8">
+          <h1 className="text-3xl font-bold">Account Settings</h1>
+          <Button 
+            onClick={handleLogout}
+            variant="destructive"
+            className="bg-red-500 hover:bg-red-600"
+          >
+            Log Out
+          </Button>
+        </div>
         
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
