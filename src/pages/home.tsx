@@ -9,10 +9,22 @@ import { DayProps } from "react-day-picker";
 
 // Mock data for demonstration - in a real app, this would come from your backend
 const passesData = {
-  "2024-04-15": { cover: 2, lineSkip: 1 },
-  "2024-04-20": { cover: 1, lineSkip: 2 },
-  "2024-04-25": { cover: 3, lineSkip: 0 },
-  "2024-12-20": { cover: 0, lineSkip: 2 }, // Added dummy line skip pass for December 20
+  "2024-04-15": {
+    cover: { quantity: 2, price: 29.99, remaining: 1 },
+    lineSkip: { quantity: 1, price: 19.99, remaining: 1 }
+  },
+  "2024-04-20": {
+    cover: { quantity: 1, price: 29.99, remaining: 0 },
+    lineSkip: { quantity: 2, price: 19.99, remaining: 2 }
+  },
+  "2024-04-25": {
+    cover: { quantity: 3, price: 29.99, remaining: 2 },
+    lineSkip: { quantity: 0, price: 19.99, remaining: 0 }
+  },
+  "2024-12-20": {
+    cover: { quantity: 0, price: 29.99, remaining: 0 },
+    lineSkip: { quantity: 2, price: 19.99, remaining: 1 }
+  }
 };
 
 const HomePage = () => {
@@ -76,11 +88,11 @@ const HomePage = () => {
                             <span className="text-lg font-medium">{date.getDate()}</span>
                             {passes && (
                               <div className="mt-2 flex flex-col items-center gap-1">
-                                {passes.cover > 0 && (
-                                  <div className="text-xs text-[#276100]">Cover ({passes.cover})</div>
+                                {passes.cover.quantity > 0 && (
+                                  <div className="text-xs text-[#276100]">Cover ({passes.cover.remaining})</div>
                                 )}
-                                {passes.lineSkip > 0 && (
-                                  <div className="text-xs text-[#FF6B6B]">Skip ({passes.lineSkip})</div>
+                                {passes.lineSkip.quantity > 0 && (
+                                  <div className="text-xs text-[#FF6B6B]">Skip ({passes.lineSkip.remaining})</div>
                                 )}
                               </div>
                             )}
@@ -100,22 +112,30 @@ const HomePage = () => {
                 <div className="space-y-4">
                   {date && passesData[date.toISOString().split('T')[0]] ? (
                     <>
-                      {passesData[date.toISOString().split('T')[0]].cover > 0 && (
-                        <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                          <div>
+                      {passesData[date.toISOString().split('T')[0]].cover.quantity > 0 && (
+                        <div className="flex flex-col p-4 bg-gray-50 rounded-lg">
+                          <div className="flex items-center justify-between mb-2">
                             <p className="font-medium">Cover Pass</p>
-                            <p className="text-sm text-gray-600">Available: {passesData[date.toISOString().split('T')[0]].cover}</p>
+                            <div className="h-2 w-2 bg-[#276100] rounded-full" />
                           </div>
-                          <div className="h-2 w-2 bg-[#276100] rounded-full" />
+                          <div className="space-y-1 text-sm text-gray-600">
+                            <p>Price: ${passesData[date.toISOString().split('T')[0]].cover.price}</p>
+                            <p>Total Quantity: {passesData[date.toISOString().split('T')[0]].cover.quantity}</p>
+                            <p>Remaining: {passesData[date.toISOString().split('T')[0]].cover.remaining}</p>
+                          </div>
                         </div>
                       )}
-                      {passesData[date.toISOString().split('T')[0]].lineSkip > 0 && (
-                        <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                          <div>
+                      {passesData[date.toISOString().split('T')[0]].lineSkip.quantity > 0 && (
+                        <div className="flex flex-col p-4 bg-gray-50 rounded-lg">
+                          <div className="flex items-center justify-between mb-2">
                             <p className="font-medium">Line Skip Pass</p>
-                            <p className="text-sm text-gray-600">Available: {passesData[date.toISOString().split('T')[0]].lineSkip}</p>
+                            <div className="h-2 w-2 bg-[#FF6B6B] rounded-full" />
                           </div>
-                          <div className="h-2 w-2 bg-[#FF6B6B] rounded-full" />
+                          <div className="space-y-1 text-sm text-gray-600">
+                            <p>Price: ${passesData[date.toISOString().split('T')[0]].lineSkip.price}</p>
+                            <p>Total Quantity: {passesData[date.toISOString().split('T')[0]].lineSkip.quantity}</p>
+                            <p>Remaining: {passesData[date.toISOString().split('T')[0]].lineSkip.remaining}</p>
+                          </div>
                         </div>
                       )}
                     </>
