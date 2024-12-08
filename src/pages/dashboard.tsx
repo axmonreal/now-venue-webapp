@@ -8,6 +8,11 @@ import { useNavigate } from "react-router-dom";
 const Dashboard = () => {
   const navigate = useNavigate();
 
+  const handleNavigation = (path: string) => {
+    console.log('Navigating to:', path);
+    navigate(path);
+  };
+
   return (
     <SidebarProvider defaultOpen>
       <div className="flex min-h-screen w-full">
@@ -31,7 +36,7 @@ const Dashboard = () => {
                   </CardHeader>
                   <CardContent className="space-y-[1vh]">
                     <button 
-                      onClick={() => navigate("/continuous-cover-pass")}
+                      onClick={() => handleNavigation("/continuous-cover-pass")}
                       className="w-full p-[2%] bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-green-600"
                     >
                       <div className="text-left">
@@ -42,7 +47,7 @@ const Dashboard = () => {
                     </button>
                     
                     <button 
-                      onClick={() => navigate("/day-of-week-cover-pass")}
+                      onClick={() => handleNavigation("/day-of-week-cover-pass")}
                       className="w-full p-[2%] bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-green-600"
                     >
                       <div className="text-left">
@@ -53,7 +58,7 @@ const Dashboard = () => {
                     </button>
                     
                     <button 
-                      onClick={() => navigate("/custom-cover-pass")}
+                      onClick={() => handleNavigation("/custom-cover-pass")}
                       className="w-full p-[2%] bg-gray-50 rounded-lg flex items-center justify-between hover:bg-gray-100 hover:border-2 hover:border-green-600"
                     >
                       <div className="text-left">
