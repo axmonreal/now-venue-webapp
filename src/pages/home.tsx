@@ -9,9 +9,9 @@ import { DayProps } from "react-day-picker";
 
 // Mock data for demonstration - in a real app, this would come from your backend
 const passesData = {
-  "2024-04-15": 2,
-  "2024-04-20": 1,
-  "2024-04-25": 3,
+  "2024-04-15": { cover: 2, lineSkip: 1 },
+  "2024-04-20": { cover: 1, lineSkip: 2 },
+  "2024-04-25": { cover: 3, lineSkip: 0 },
 };
 
 const HomePage = () => {
@@ -48,19 +48,24 @@ const HomePage = () => {
                     cell: "relative h-12 w-12 p-0",
                   }}
                   components={{
-                    Day: ({ date, ...props }: DayProps) => {
+                    Day: ({ date, ...props }: DayProps & { className?: string }) => {
                       const formattedDate = date.toISOString().split('T')[0];
-                      const hasPass = passesData[formattedDate];
+                      const passes = passesData[formattedDate];
                       return (
                         <div className="relative w-full h-full">
                           <div
                             {...props}
-                            className={`${props.className || ''} relative`}
+                            className={`${props.className || ''} relative flex items-center justify-center w-full h-full`}
                           >
                             {date.getDate()}
-                            {hasPass && (
-                              <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2">
-                                <div className="h-1.5 w-1.5 bg-[#276100] rounded-full" />
+                            {passes && (
+                              <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 flex gap-1">
+                                {passes.cover > 0 && (
+                                  <div className="h-1.5 w-1.5 bg-[#276100] rounded-full" />
+                                )}
+                                {passes.lineSkip > 0 && (
+                                  <div className="h-1.5 w-1.5 bg-[#FF6B6B] rounded-full" />
+                                )}
                               </div>
                             )}
                           </div>
@@ -77,9 +82,32 @@ const HomePage = () => {
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  <p className="text-sm text-muted-foreground">
-                    No passes scheduled for today
-                  </p>
+                  {date && passesData[date.toISOString().split('T')[0]] ? (
+                    <>
+                      {passesData[date.toISOString().split('T')[0]].cover > 0 && (
+                        <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                          <div>
+                            <p className="font-medium">Cover Pass</p>
+                            <p className="text-sm text-gray-600">Available: {passesData[date.toISOString().split('T')[0]].cover}</p>
+                          </div>
+                          <div className="h-2 w-2 bg-[#276100] rounded-full" />
+                        </div>
+                      )}
+                      {passesData[date.toISOString().split('T')[0]].lineSkip > 0 && (
+                        <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                          <div>
+                            <p className="font-medium">Line Skip Pass</p>
+                            <p className="text-sm text-gray-600">Available: {passesData[date.toISOString().split('T')[0]].lineSkip}</p>
+                          </div>
+                          <div className="h-2 w-2 bg-[#FF6B6B] rounded-full" />
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <p className="text-sm text-muted-foreground">
+                      No passes scheduled for selected date
+                    </p>
+                  )}
                 </div>
               </CardContent>
             </Card>
